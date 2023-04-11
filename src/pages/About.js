@@ -1,6 +1,12 @@
+import { useNavigate } from 'react-router-dom';
+
 // nested routes
 
 export default function About() {
+  // const history = useHistory()
+  // history.push('/products')
+  const navigate = useNavigate();
+
   return (
     <div className='content'>
       <h2>About Us</h2>
@@ -23,6 +29,8 @@ export default function About() {
         doloremque. Corporis in et placeat unde sapiente perspiciatis minus!
         Recusandae, ad!
       </p>
+
+      <button onClick={() => navigate('/products')}>See our products</button>
 
       {/* <Route path="/about/offers">
         <Offers />

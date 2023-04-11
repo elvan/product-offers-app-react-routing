@@ -1,4 +1,5 @@
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
+import { BrowserRouter, Link, Navigate, Route, Routes } from 'react-router-dom';
 
 // pages
 import About from './pages/About';
@@ -7,6 +8,8 @@ import ProductDetails from './pages/ProductDetails';
 import Products from './pages/Products';
 
 function App() {
+  const [cartIsEmpty] = useState(false);
+
   return (
     <div className='App'>
       <BrowserRouter>
@@ -27,6 +30,15 @@ function App() {
               <div>
                 <h2>Test page</h2>
               </div>
+            }
+          />
+
+          {/* <Route path="/redirect" element={<Redirect to="/about" />} /> */}
+          <Route path='/redirect' element={<Navigate to='/about' />} />
+          <Route
+            path='/checkout'
+            element={
+              cartIsEmpty ? <Navigate to='/products' /> : <p>checkout</p>
             }
           />
         </Routes>
