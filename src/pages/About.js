@@ -1,7 +1,4 @@
-import { Route } from 'react-router-dom';
-
 // nested routes
-import Offers from './Offers';
 
 export default function About() {
   return (
@@ -27,9 +24,9 @@ export default function About() {
         Recusandae, ad!
       </p>
 
-      <Route path='/about/offers'>
+      {/* <Route path="/about/offers">
         <Offers />
-      </Route>
+      </Route> */}
     </div>
   );
 }
